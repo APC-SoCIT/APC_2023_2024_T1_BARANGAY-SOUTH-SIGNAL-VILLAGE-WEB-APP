@@ -13,7 +13,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
-
     <style>
         .groupBox {
             border: 5px solid rgba(192, 1, 1, 0.932);
@@ -39,21 +38,23 @@
             border-radius: 10px;
         }
 
-        .list-group-item {
-            background-color: #f8f9fa;
-            /* Change to your desired default background color */
-            color: #333;
-            /* Change to your desired text color */
+        .groupBoxHeader {
+            padding: 0.2em 0.5em;
+            text-align: center;
+            border-radius: 6px;
+            font-weight: bold;
+
         }
 
-        /* Active tab color */
-        .list-group-item.active {
-            background-color: rgba(192, 1, 1, 0.932);
-            border-color: rgba(192, 1, 1, 0.932);
-            text-decoration: solid;
-            /* Change to your desired active background color */
-            color: white;
-            /* Change to your desired active text color */
+        .myContainer_reg {
+            border: 3px rgba(192, 1, 1, 0.932);
+            width: auto;
+            padding: 20px;
+            margin-top: 2px;
+            background-color: rgba(245, 245, 245, 0.966);
+            margin-left: 5%;
+            margin-right: 5%;
+            border-radius: 10px;
         }
 
         .groupBoxHeader {
@@ -64,21 +65,34 @@
 
         }
 
-        .list-group-item:hover {
+
+        /* Styles for hover state */
+        .accordion-button:hover {
             background-color: rgba(192, 1, 1, 0.932);
             color: white;
         }
 
-        @media (max-width: 992px) {
-            .col-2 {
-                display: none;
-                /* Hide the sidebar on smaller screens */
-            }
+        /* Active state */
+        .accordion-button:not(.collapsed) {
+            background-color: rgba(192, 1, 1, 0.932);
+            color: white;
+        }
 
-            .col-10 {
-                width: 100%;
-                /* Expand content to full width on smaller screens */
-            }
+        .accordion-item.active .accordion-button {
+            background-color: rgba(192, 1, 1, 0.932);
+            color: white;
+        }
+
+        .accordion-body {
+            margin: 2em 0;
+            padding: 2em;
+            text-align: justify;
+            font-size: large;
+        }
+
+        button {
+            font-size: large;
+            font-weight: bold;
         }
     </style>
 
@@ -95,33 +109,17 @@
             </div>
         </div>
 
-        <div class=" col-2 m-5">
-            <div class="list-group" id="list-tab-privacy" role="tablist">
-                <a class="list-group-item list-group-item-action active" id="list-intro-list" data-bs-toggle="list"
-                    href="#list-intro" role="tab" aria-controls="list-intro">Introduction</a>
-                <a class="list-group-item list-group-item-action" id="list-rights-list" data-bs-toggle="list"
-                    href="#list-rights" role="tab" aria-controls="list-rights">Your Rights and Preferences</a>
-                <a class="list-group-item list-group-item-action" id="list-collect-list" data-bs-toggle="list"
-                    href="#list-collect" role="tab" aria-controls="list-collect">How we Collect your Personal Data</a>
-                <a class="list-group-item list-group-item-action" id="list-use-list" data-bs-toggle="list"
-                    href="#list-use" role="tab" aria-controls="list-use">What do we use your Personal Data for?</a>
-                <a class="list-group-item list-group-item-action" id="list-share-list" data-bs-toggle="list"
-                    href="#list-share" role="tab" aria-controls="list-share">Sharing your Personal Data</a>
-                <a class="list-group-item list-group-item-action" id="list-delete-list" data-bs-toggle="list"
-                    href="#list-delete" role="tab" aria-controls="list-delete">Data Retention and Deletion</a>
-                <a class="list-group-item list-group-item-action" id="list-keep-list" data-bs-toggle="list"
-                    href="#list-keep" role="tab" aria-controls="list-keep">Keeping your Data Safe</a>
-            </div>
-        </div>
-
-        <div class="col-10 col-md-8">
-            <div class="tab-content " id="nav-tabContent">
-                <div class="tab-pane fade show active" id="list-intro" role="tabpanel" aria-labelledby="list-home-list">
-
-                    <h1 class="groupBoxHeader mt-3">Introduction</h1>
-                    <hr>
-                    <div class="groupBox m-5 p-3">
-                        <p>At Barangay South Signal Village, we recognize the importance of
+        <div class="accordion mt-5" id="privacyEngAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button id="introButton" class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#intro" aria-expanded="false" aria-controls="intro">
+                        Introduction
+                    </button>
+                </h2>
+                <div id="intro" class="accordion-collapse collapse" data-bs-parent="#privacyEngAccordion">
+                    <div class="accordion-body">
+                        <p> At Barangay South Signal Village, we recognize the importance of
                             protecting your personal
                             data
                             and
@@ -135,13 +133,18 @@
                             protect
                             your
                             personal information when you use our web app.</p>
-
                     </div>
                 </div>
-                <div class="tab-pane fade" id="list-rights" role="tabpanel" aria-labelledby="list-profile-list">
-                    <h1 class="groupBoxHeader mt-3">Your Rights and Preferences</h1>
-                    <hr>
-                    <div class="groupBox m-5 p-3">
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button id="rightsButton" class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#rights" aria-expanded="false" aria-controls="rights">
+                        Your Rights and Preferences
+                    </button>
+                </h2>
+                <div id="rights" class="accordion-collapse collapse" data-bs-parent="#privacyEngAccordion">
+                    <div class="accordion-body">
                         <p>As an individual, you have certain rights under applicable law with regard to
                             your
                             personal
@@ -170,18 +173,27 @@
                                 commonly
                                 used, and
                                 machine-readable format.</li>
+
                         </ul>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="list-collect" role="tabpanel" aria-labelledby="list-messages-list">
-                    <h1 class="groupBoxHeader mt-3">How we Collect your Personal Data</h1>
-                    <hr>
-                    <div class="groupBox m-5 p-3">
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button id="collectButton" class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collect" aria-expanded="false"
+                        aria-controls="collect">
+                        How we Collect your Personal Data
+                    </button>
+                </h2>
+                <div id="collect" class="accordion-collapse collapse" data-bs-parent="#privacyEngAccordion">
+                    <div class="accordion-body">
                         <p>We collect your personal data in the following ways:</p>
                         <p>These are the following data needed upon registering, with the corresponding
                             purpose:
                         </p>
                         <ul>
+
                             <li>Full Name – to properly identify the right person when conducting the
                                 registration.
                             </li>
@@ -216,28 +228,44 @@
                                 contacted if
                                 needed
                                 by the barangay officials.</li>
+
                         </ul>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="list-use" role="tabpanel" aria-labelledby="list-settings-list">
-                    <h1 class="groupBoxHeader mt-3">What do we use your Personal Data for?</h1>
-                    <hr>
-                    <div class="groupBox m-5 p-3">
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button id="useButton" class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#use" aria-expanded="false" aria-controls="use">
+                        What do we Use your Personal Data for?
+                    </button>
+                </h2>
+                <div id="use" class="accordion-collapse collapse" data-bs-parent="#privacyEngAccordion">
+                    <div class="accordion-body">
                         <p>We use your personal data to provide and improve our services to you. This
                             includes:</p>
                         <ul>
+
                             <li>To communicate with you about our services and provide customer support.
                             </li>
                             <li>To process transactions to our services.</li>
                             <li>To improve our services and develop new features.</li>
                             <li>To comply with legal obligations.</li>
+
                         </ul>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="list-share" role="tabpanel" aria-labelledby="list-settings-list">
-                    <h1 class="groupBoxHeader mt-3">Sharing your Personal Data</h1>
-                    <hr>
-                    <div class="groupBox m-5 p-3">
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button id="shareButton" class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#share" aria-expanded="false" aria-controls="share">
+                        Sharing your Personal Data
+                    </button>
+                </h2>
+                <div id="share" class="accordion-collapse collapse" data-bs-parent="#privacyEngAccordion">
+                    <div class="accordion-body">
+
                         <p>We do not sell, rent, or lease your personal information to third parties without
                             your
                             consent.
@@ -265,12 +293,21 @@
                             the
                             safety
                             of others. </p>
+
                     </div>
                 </div>
-                <div class="tab-pane fade" id="list-delete" role="tabpanel" aria-labelledby="list-settings-list">
-                    <h1 class="groupBoxHeader mt-3">Data Retention and Deletion</h1>
-                    <hr>
-                    <div class="groupBox m-5 p-3">
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button id="retentionButton" class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#retention" aria-expanded="false"
+                        aria-controls="retention">
+                        Data Retention and Deletion
+                    </button>
+                </h2>
+                <div id="retention" class="accordion-collapse collapse" data-bs-parent="#privacyEngAccordion">
+                    <div class="accordion-body">
+
                         <p>We keep your personal data only for as long as necessary to provide you with our
                             services
                             and
@@ -284,12 +321,20 @@
                             these
                             purposes.
                         </p>
+
                     </div>
                 </div>
-                <div class="tab-pane fade" id="list-keep" role="tabpanel" aria-labelledby="list-settings-list">
-                    <h1 class="groupBoxHeader mt-3">Keeping your Data Safe</h1>
-                    <hr>
-                    <div class="groupBox m-5 p-3">
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button id="keepButton" class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#keep" aria-expanded="false" aria-controls="keep">
+                        Keeping your Data Safe
+                    </button>
+                </h2>
+                <div id="keep" class="accordion-collapse collapse" data-bs-parent="#privacyEngAccordion">
+                    <div class="accordion-body">
+
                         <p>We take appropriate technical and organizational measures to protect your
                             personal data
                             against
@@ -298,30 +343,14 @@
                             implement
                             access
                             controls,
-                            encryption, and retention policies to protect your personal data. </p>
+                            encryption, and retention policies to protect your personal data.
+                        </p>
+
                     </div>
                 </div>
             </div>
         </div>
 </body>
-<script>
-    const triggerTabList = document.querySelectorAll('#list-tab-privacy a')
-    triggerTabList.forEach(triggerEl => {
-        const tabTrigger = new bootstrap.Tab(triggerEl)
-
-        triggerEl.addEventListener('click', event => {
-            event.preventDefault()
-            tabTrigger.show()
-        })
-    })
-</script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-    crossorigin="anonymous"></script>
 
 </html>
+</head>
