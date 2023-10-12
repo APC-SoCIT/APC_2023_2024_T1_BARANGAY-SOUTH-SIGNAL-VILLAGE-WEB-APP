@@ -18,7 +18,7 @@
         }
 
         .details-container {
-            margin-top: 5em;
+            margin-top: 2em;
             border-top: 4px solid #AA0F0A;
             box-shadow: 0px 8px 8px 8px rgba(0, 0, 0, 0.2);
             border-radius: 7px;
@@ -50,21 +50,7 @@
 
         }
 
-        #proceed-payment {
-            font-size: 150%;
-            background-color: #AA0F0A;
-            border: #AA0F0A;
-        }
 
-        #proceed-payment:hover {
-            background-color: white;
-            color: black;
-            border: 2px solid #AA0F0A;
-        }
-
-        p {
-            font-size: 125%;
-        }
 
         .tooltip-inner {
             font-size: 50px;
@@ -88,7 +74,6 @@
             background-color: white;
             color: #AA0F0A;
             border: 2px solid #AA0F0A;
-            font-size: larger;
         }
 
         #close-button:hover {
@@ -101,7 +86,6 @@
             background-color: #AA0F0A;
             color: white;
             border: 2px solid white;
-            font-size: larger;
         }
 
         #proceed-button:hover {
@@ -137,17 +121,17 @@
     </header>
     <div class="my-container">
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb fs-5">
+            <ol class="breadcrumb fs-6">
                 <li class="breadcrumb-item"><a href="#">All Payments</a></li>
                 <li class="breadcrumb-item active" aria-current="page">"Payment Number"</li>
             </ol>
         </nav>
-        <h1 id="payment-number">"Payment Number"</h1>
+        <h2 id="payment-number">"Payment Number"</h2>
         <div class="container-fluid details-container">
             <div class="row">
                 <div class="col-4">
-                    <h2>Payment Details</h2>
-                    <div class="row pt-5 pb-5">
+                    <h4>Payment Details</h4>
+                    <div class="row pt-3 pb-2">
                         <div class="col-6">
                             <p>Gross Amount:</p>
                         </div>
@@ -160,30 +144,32 @@
                             <hr class="centered-hr">
                         </div>
                         <div class="col-6">
-                            <p class="fw-semibold fs-4">Total Amount: </p>
+                            <p class="fw-semibold fs-5">Total Amount: </p>
                         </div>
                         <div class="col-6" style="text-align: end;">
-                            <p id="total-amount" class="fw-semibold fs-4">
+                            <p id="total-amount" class="fw-semibold fs-5">
                                 PHP "Total Amount"
                             </p>
                         </div>
                     </div>
                     <hr>
-                    <div class="row mb-5 mt-3" style="padding-top: 10px;">
-                        <h2 id="payment-method" class="pb-3">Over-the-Counter</h2>
-                        <div class="col-6 pt-3">
-                            <p>Paid on:</p>
-                        </div>
-                        <div class="col-6" style="text-align: end;">
-                            <p id="payment-date">
-                                "Date and Time"
-                            </p>
+                    <div class="row mb-4 mt-1">
+                        <div class="row">
+                            <h4 id="payment-method" class="pb-2 pt-2">Over-the-Counter</h4>
+                            <div class="col-6">
+                                <p>Paid on:</p>
+                            </div>
+                            <div class="col-6" style="text-align: end;">
+                                <p id="payment-date">
+                                    "Date and Time"
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-4" style="border-right: 4px solid #AA0F0A;">
-                    <h2>Request Details</h2>
-                    <div class="row pt-4" style="padding-top: 10px;">
+                    <h4>Request Details</h4>
+                    <div class="row pt-3">
                         <div class="col-6">
                             <p>Reference Key: </p>
                             <p>Resident Name: </p>
@@ -207,15 +193,14 @@
                 </div>
                 <div class="col-4" style="background-color: rgb(238, 238, 238); padding-left: 50px;">
                     <div>
-                        <h2>Billing Details</h2>
-                        <h4 id="resident-name" class="mt-4">"Resident Name"</h4>
+                        <h4>Billing Details</h4>
+                        <h5 id="resident-name" class="mt-4">"Resident Name"</h5>
                     </div>
-                    <div class="contact-details mt-5">
-                        <i class="bi bi-envelope-at-fill" id="customer-email" style="font-size: larger;"> "Customer
+                    <div class="contact-details mt-4">
+                        <i class="bi bi-envelope-at-fill" id="customer-email"> "Customer
                             Email"</i>
                         <br>
-                        <br>
-                        <i class="bi bi-telephone-fill" id="contact-num" style="font-size: larger;"> "Contact
+                        <i class="bi bi-telephone-fill" id="contact-num"> "Contact
                             Number"</i>
                     </div>
                 </div>
@@ -315,10 +300,10 @@
             return;
         }
 
-        const change = amountValue - paymentValue;
+        const change = paymentValue - amountValue;
 
         const changeDisplay = document.getElementById('changeDisplay');
-        changeDisplay.innerHTML = ` ${change}`;
+        changeDisplay.innerHTML = ` ₱ ${change}`;
 
         // Set the calculated change as the value of another input
         const changeInput = document.getElementById('changeInput');
