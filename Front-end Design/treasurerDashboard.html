@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="csrf-token" content="DWMt3Eh8HGkKqwK4FTPdUjy1WOTXuTaSWUIXSZeQ">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sidebars/">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <title>Barangay Secretary Dashboard </title>
+    <link rel="icon" href="https://socitcloud.apc.edu.ph/barangay/assets/imgs/southsignalLogoLeft.png" type="image/png">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <style>
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 280px;
+            z-index: 2;
+            background-color: #720602;
+        }
+
+        .profile {
+            text-align: center;
+        }
+
+        .sidebar-nav {
+            text-decoration: white;
+        }
+
+        .btn-primary1 {
+            color: #fff;
+            background-color: #720602;
+            border-color: #720602;
+            /*set the color you want here*/
+        }
+
+        .btn-primary1:hover,
+        .btn-primary1:focus,
+        .btn-primary1:active,
+        .btn-primary1.active,
+        .open>.dropdown-toggle.btn-primary1 {
+            color: #720602;
+            background-color: #fff;
+            border-color: #fff;
+            /*set the color you want here*/
+        }
+
+        .content {
+            position: relative;
+            width: 100%;
+            padding-top: 65px;
+            /* Use the topbar's height + something more? */
+            padding-left: 315px;
+            /* Use the sidebar's width + something more? */
+            padding-right: 25px;
+            /* Set box-sizing to border-box, to ensure the content block stays within the window, and not expand due to padding */
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+
+        .top_nav {
+            position: fixed;
+            top: 0px;
+            width: 100%-280px;
+            left: 280px;
+            right: 0;
+            z-index: 2;
+
+        }
+
+        .nav-tabs .nav-link,
+        .nav-pills .nav-link {
+            background-color: rgba(191, 190, 190, 0);
+            /* Change to your desired background color */
+            border-color: rgba(191, 190, 190, 0);
+            color: black;
+            /* Change to your desired text color */
+        }
+
+        /* Tab color when clicked */
+        .nav-tabs .nav-link.active,
+        .nav-pills .nav-link.active {
+            background-color: rgba(192, 1, 1, 0.932);
+            border-color: rgba(192, 1, 1, 0.932);
+            /* Change to your desired background color */
+            /* Change to your desired text color */
+            color: white;
+        }
+
+        .nav-link:hover {
+            background-color: rgba(192, 1, 1, 0.932);
+            border-color: rgba(192, 1, 1, 0.932);
+            color: black;
+        }
+
+        .nav-tabs #income-tab.nav-link.active {
+            background-color: #198754;
+            border-color: #198754;
+            color: white;
+        }
+
+        .nav-tabs #online-tab.nav-link.active {
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+            color: white;
+        }
+
+        .nav-tabs #onsite-tab.nav-link.active {
+            background-color: #dc3545;
+            border-color: #dc3545;
+            color: white;
+        }
+
+        .nav-tabs #ready-tab.nav-link.active {
+            background-color: #ffc107;
+            border-color: #ffc107;
+            color: white;
+        }
+
+        #ready-tab.nav-link:hover {
+            background-color: #ffc107;
+            color: black;
+        }
+
+        #income-tab.nav-link:hover {
+            background-color: #198754;
+            color: black;
+        }
+
+        #online-tab.nav-link:hover {
+            background-color: #0d6efd;
+            color: black;
+        }
+
+        #onsite-tab.nav-link:hover {
+            background-color: #dc3545;
+            color: black;
+        }
+    </style>
+</head>
+
+
+<body>
+    <header>
+        <div class="sidebar d-flex flex-column flex-shrink-0 p-3 text-white">
+            <div class="profile">
+                <img src="" class="rounded-circle " style="width: 100px;" alt="Avatar" />
+                <h5 class=""><strong>"Barangay Treasurer"</strong></h6>
+                    <p class="">Barangay Treasurer</p>
+            </div>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <a href="treasurerDashboard.html" style="text-align: justify;" type="button" class="btn btn-primary1"><i
+                        class="bi bi-bar-chart-fill"></i> Dashboard</a>
+
+                <div class="dropdown">
+                    <button style="width:100%;text-align: justify;" class="btn btn-primary1 dropdown-toggle"
+                        type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-file-earmark-text-fill"></i> Manage Payments
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow"
+                        aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="">View List of Payments</a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="">Process Online Payment</a></li>
+                        <li><a class="dropdown-item" href="">Process Onsite Payment</a></li>
+                    </ul>
+                </div>
+            </ul>
+            <hr>
+            <div class="dropdown">
+                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                    id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="https://socitcloud.apc.edu.ph/barangay/adminID/Nerisa_Caducio.jpg" alt="" width="32"
+                        height="32" class="rounded-circle me-2">
+                    <p hidden>nc</p>
+                    <strong>nc</strong>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                    <li><a class="dropdown-item" href="https://socitcloud.apc.edu.ph/barangay/myAccount">Account
+                            Setting</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="https://socitcloud.apc.edu.ph/barangay/signout">Sign out</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="top_nav">
+        <nav class="main-header navbar navbar-expand " style="background-color: #720602;">
+            <div class="container-fluid flex-sm-row">
+                <ul class="navbar-nav">
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                    <li class="nav-item ml-3">
+                        <img class="nav-link img-circle " src="imgs/SOUTHSIGNAL LOGO.png" alt=""
+                            style="padding: 0px;width: 50px ;">
+                    </li>
+                    <li class="nav-item">
+                        <nobr class="nav-link text-white font-weight-bold"><span>BARANGAY SOUTH SIGNAL VILLAGE</span>
+                        </nobr>
+                    </li>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <div class="content">
+
+        <p class="display-6"><i class="bi bi-speedometer2"></i> <strong>Dashboard</strong></p>
+        <hr style="color: black;">
+        <div class="card ">
+            <div class="card-header">
+                <h3>TRANSACTION REPORTS</h3>
+            </div>
+            <div class="card-body ">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="daily-tab" data-bs-toggle="tab"
+                            data-bs-target="#daily-tab-pane" type="button" role="tab" aria-controls="daily-tab-pane"
+                            aria-selected="true">Daily</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="weekly-tab" data-bs-toggle="tab" data-bs-target="#weekly-tab-pane"
+                            type="button" role="tab" aria-controls="weekly-tab-pane"
+                            aria-selected="false">Weekly</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="monthly-tab" data-bs-toggle="tab"
+                            data-bs-target="#monthly-tab-pane" type="button" role="tab" aria-controls="monthly-tab-pane"
+                            aria-selected="false">Monthly</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="yearly-tab" data-bs-toggle="tab" data-bs-target="#yearly-tab-pane"
+                            type="button" role="tab" aria-controls="yearly-tab-pane"
+                            aria-selected="false">Yearly</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="daily-tab-pane" role="tabpanel"
+                        aria-labelledby="daily-tab" tabindex="0">
+                        <div class="row pt-5">
+                            <div class="col-3 mb-4">
+                                <div class="card text-center py-2"
+                                    style="border-left: 5px solid #198754; border-radius: 8px;">
+                                    <div class="card-body">
+                                        <div class="text-uppercase text-success fw-bold text-xs mb-1 text-center">
+                                            <span>Total Income</span>
+                                        </div>
+                                        <div class="text-dark fw-bold h5 mb-0 text-center"><span>₱ 5,000.00</span></div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 mb-4">
+                                <div class="card text-center py-2"
+                                    style="border-left: 5px solid #0d6efd; border-radius: 8px;">
+                                    <div class="card-body">
+                                        <div class="text-uppercase text-info fw-bold text-xs mb-1 text-center">
+                                            <span>Online Payment Transactions</span>
+                                        </div>
+                                        <div class="text-dark fw-bold h5 mb-0 text-center"><span>₱ 5,000.00</span></div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 mb-4">
+                                <div class="card text-center py-2"
+                                    style="border-left: 5px solid #dc3545; border-radius: 8px;">
+                                    <div class="card-body">
+                                        <div class="row align-items-center no-gutters">
+                                            <div class="col me-2">
+                                                <div
+                                                    class="text-uppercase text-danger fw-bold text-xs mb-1 text-center">
+                                                    <span>Onsite Payment Transactions</span>
+                                                </div>
+                                                <div class="text-dark fw-bold h5 mb-0 text-center"><span>₱
+                                                        5,000.00</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 mb-4">
+                                <div class="card text-center py-2"
+                                    style="border-left: 5px solid #ffc107; border-radius: 8px;">
+                                    <div class="card-body">
+                                        <div class="text-uppercase text-warning fw-bold text-xs mb-1 text-center">
+                                            <span>Ready for Payment</span>
+                                        </div>
+                                        <div class="text-dark fw-bold h5 mb-0 text-center"><span>₱ 5,000.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="weekly-tab-pane" role="tabpanel" aria-labelledby="weekly-tab"
+                        tabindex="0">
+                        <div class="row pt-5">
+                            <div class="col-3 mb-4">
+                                <div class="card text-center py-2"
+                                    style="border-left: 5px solid #198754; border-radius: 8px;">
+                                    <div class="card-body">
+                                        <div class="text-uppercase text-success fw-bold text-xs mb-1 text-center">
+                                            <span>Total Income</span>
+                                        </div>
+                                        <div class="text-dark fw-bold h5 mb-0 text-center"><span>₱ 5,000.00</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 mb-4">
+                                <div class="card text-center py-2"
+                                    style="border-left: 5px solid #0d6efd; border-radius: 8px;">
+                                    <div class="card-body">
+                                        <div class="text-uppercase text-info fw-bold text-xs mb-1 text-center">
+                                            <span>Online Payment Transactions</span>
+                                        </div>
+                                        <div class="text-dark fw-bold h5 mb-0 text-center"><span>₱ 5,000.00</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 mb-4">
+                                <div class="card text-center py-2"
+                                    style="border-left: 5px solid #dc3545; border-radius: 8px;">
+                                    <div class="card-body">
+                                        <div class="text-uppercase text-danger fw-bold text-xs mb-1 text-center">
+                                            <span>Onsite Payment Transactions</span>
+                                        </div>
+                                        <div class="text-dark fw-bold h5 mb-0 text-center"><span>₱ 5,000.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 mb-4">
+                                <div class="card text-center py-2"
+                                    style="border-left: 5px solid #ffc107; border-radius: 8px;">
+                                    <div class="card-body">
+                                        <div class="text-uppercase text-warning fw-bold text-xs mb-1 text-center">
+                                            <span>Ready for Payment</span>
+                                        </div>
+                                        <div class="text-dark fw-bold h5 mb-0 text-center"><span>₱ 5,000.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="monthly-tab-pane" role="tabpanel" aria-labelledby="monthly-tab"
+                        tabindex="0">
+                        <div class="row pt-5">
+                            <div class="col-3 mb-4">
+                                <div class="card text-center py-2"
+                                    style="border-left: 5px solid #198754; border-radius: 8px;">
+                                    <div class="card-body">
+                                        <div class="text-uppercase text-success fw-bold text-xs mb-1 text-center">
+                                            <span>Total Income</span>
+                                        </div>
+                                        <div class="text-dark fw-bold h5 mb-0 text-center"><span>₱ 5,000.00</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 mb-4">
+                                <div class="card text-center py-2"
+                                    style="border-left: 5px solid #0d6efd; border-radius: 8px;">
+                                    <div class="card-body">
+                                        <div class="text-uppercase text-info fw-bold text-xs mb-1 text-center">
+                                            <span>Online Payment Transactions</span>
+                                        </div>
+                                        <div class="text-dark fw-bold h5 mb-0 text-center"><span>₱ 5,000.00</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 mb-4">
+                                <div class="card text-center py-2"
+                                    style="border-left: 5px solid #dc3545; border-radius: 8px;">
+                                    <div class="card-body">
+                                        <div class="text-uppercase text-danger fw-bold text-xs mb-1 text-center">
+                                            <span>Onsite Payment Transactions</span>
+                                        </div>
+                                        <div class="text-dark fw-bold h5 mb-0 text-center"><span>₱ 5,000.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 mb-4">
+                                <div class="card text-center py-2"
+                                    style="border-left: 5px solid #ffc107; border-radius: 8px;">
+                                    <div class="card-body">
+                                        <div class="text-uppercase text-warning fw-bold text-xs mb-1 text-center">
+                                            <span>Ready for Payment</span>
+                                        </div>
+                                        <div class="text-dark fw-bold h5 mb-0 text-center"><span>₱ 5,000.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="yearly-tab-pane" role="tabpanel" aria-labelledby="yearly-tab"
+                        tabindex="0">
+                        <div class="row pt-5">
+                            <div class="col-3 mb-4">
+                                <div class="card text-center py-2"
+                                    style="border-left: 5px solid #198754; border-radius: 8px;">
+                                    <div class="card-body">
+                                        <div class="text-uppercase text-success fw-bold text-xs mb-1 text-center">
+                                            <span>Total Income</span>
+                                        </div>
+                                        <div class="text-dark fw-bold h5 mb-0 text-center"><span>₱ 5,000.00</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 mb-4">
+                                <div class="card text-center py-2"
+                                    style="border-left: 5px solid #0d6efd; border-radius: 8px;">
+                                    <div class="card-body">
+                                        <div class="text-uppercase text-info fw-bold text-xs mb-1 text-center">
+                                            <span>Online Payment Transactions</span>
+                                        </div>
+                                        <div class="text-dark fw-bold h5 mb-0 text-center"><span>₱ 5,000.00</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 mb-4">
+                                <div class="card text-center py-2"
+                                    style="border-left: 5px solid #dc3545; border-radius: 8px;">
+                                    <div class="card-body">
+                                        <div class="text-uppercase text-danger fw-bold text-xs mb-1 text-center">
+                                            <span>Onsite Payment Transactions</span>
+                                        </div>
+                                        <div class="text-dark fw-bold h5 mb-0 text-center"><span>₱ 5,000.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 mb-4">
+                                <div class="card text-center py-2"
+                                    style="border-left: 5px solid #ffc107; border-radius: 8px;">
+                                    <div class="card-body">
+                                        <div class="text-uppercase text-warning fw-bold text-xs mb-1 text-center">
+                                            <span>Ready for Payment</span>
+                                        </div>
+                                        <div class="text-dark fw-bold h5 mb-0 text-center"><span>₱ 5,000.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="payment-statistics text-center mb-4">
+                <button class="btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+                    aria-expanded="false" aria-controls="collapseExample">
+                    <i class="bi bi-graph-up"></i> Show Transactions Statistics
+                </button>
+            </div>
+            <div class="card-footer text-muted text-center">
+                As of October 17, 2023
+            </div>
+        </div>
+        <div class="collapse mt-3" id="collapseExample">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h4>Transaction Report (Category per Timestamp)</h4>
+                </div>
+                <div class="card-body m-3">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="income-tab" data-bs-toggle="tab"
+                                data-bs-target="#income-tab-pane" type="button" role="tab"
+                                aria-controls="income-tab-pane" aria-selected="true">Income</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="online-tab" data-bs-toggle="tab"
+                                data-bs-target="#online-tab-pane" type="button" role="tab"
+                                aria-controls="online-tab-pane" aria-selected="false">Online
+                                Payment</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="onsite-tab" data-bs-toggle="tab"
+                                data-bs-target="#onsite-tab-pane" type="button" role="tab"
+                                aria-controls="onsite-tab-pane" aria-selected="false">Onsite
+                                Payment</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="income-tab-pane" role="tabpanel"
+                            aria-labelledby="income-tab" tabindex="0">
+                            <div class="row pt-2 m-3">
+                                <div class="col-2 text-center">
+                                    <div class="d-flex align-items-start">
+                                        <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist"
+                                            aria-orientation="vertical">
+                                            <button class="nav-link active" id="v-pills-daily-tab" data-bs-toggle="pill"
+                                                data-bs-target="#v-pills-daily" type="button" role="tab"
+                                                aria-controls="v-pills-daily" aria-selected="true">Daily</button>
+                                            <button class="nav-link" id="v-pills-weekly-tab" data-bs-toggle="pill"
+                                                data-bs-target="#v-pills-weekly" type="button" role="tab"
+                                                aria-controls="v-pills-weekly" aria-selected="false">Weekly</button>
+                                            <button class="nav-link" id="v-pills-monthly-tab" data-bs-toggle="pill"
+                                                data-bs-target="#v-pills-monthly" type="button" role="tab"
+                                                aria-controls="v-pills-monthly" aria-selected="false">Monthly</button>
+                                            <button class="nav-link" id="v-pills-yearly-tab" data-bs-toggle="pill"
+                                                data-bs-target="#v-pills-yearly" type="button" role="tab"
+                                                aria-controls="v-pills-yearly" aria-selected="false">Yearly</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-10">
+                                    <div class="card">
+                                        <div class="tab-content p-3" id="v-pills-tabContent">
+                                            <div class="tab-pane fade show active" id="v-pills-daily" role="tabpanel"
+                                                aria-labelledby="v-pills-daily-tab" tabindex="0">
+                                                <div class="card-title text-center">
+                                                    <h4>Total Income per Day</h4>
+                                                    <canvas id="dailyIncomeChart"></canvas>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="v-pills-weekly" role="tabpanel"
+                                                aria-labelledby="v-pills-weekly-tab" tabindex="0">
+                                                <div class="card-title text-center">
+                                                    <h4>Total Income per Week</h4>
+                                                    <canvas id="weeklyIncomeChart"></canvas>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="v-pills-monthly" role="tabpanel"
+                                                aria-labelledby="v-pills-monthly-tab" tabindex="0">
+                                                <div class="card-title text-center">
+                                                    <h4>Total Income per Month</h4>
+                                                    <canvas id="monthlyIncomeChart"></canvas>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="v-pills-yearly" role="tabpanel"
+                                                aria-labelledby="v-pills-yearly-tab" tabindex="0">
+                                                <div class="card-title text-center">
+                                                    <h4>Total Income per Year</h4>
+                                                    <canvas id="yearlyIncomeChart"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="onsite-tab-pane" role="tabpanel" aria-labelledby="onsite-tab"
+                            tabindex="0">
+                            <div class="row pt-2 m-3">
+                                <div class="col-3">
+                                    <div class="d-flex align-items-start">
+                                        <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist"
+                                            aria-orientation="vertical">
+                                            <button class="nav-link active" id="v-pills-daily-tab" data-bs-toggle="pill"
+                                                data-bs-target="#v-pills-daily-onsite" type="button" role="tab"
+                                                aria-controls="v-pills-daily-onsite" aria-selected="true">Daily</button>
+                                            <button class="nav-link" id="v-pills-weekly-tab" data-bs-toggle="pill"
+                                                data-bs-target="#v-pills-weekly-onsite" type="button" role="tab"
+                                                aria-controls="v-pills-weekly-onsite"
+                                                aria-selected="false">Weekly</button>
+                                            <button class="nav-link" id="v-pills-monthly-tab" data-bs-toggle="pill"
+                                                data-bs-target="#v-pills-monthly-onsite" type="button" role="tab"
+                                                aria-controls="v-pills-monthly-onsite"
+                                                aria-selected="false">Monthly</button>
+                                            <button class="nav-link" id="v-pills-yearly-tab" data-bs-toggle="pill"
+                                                data-bs-target="#v-pills-yearly-onsite" type="button" role="tab"
+                                                aria-controls="v-pills-yearly-onsite"
+                                                aria-selected="false">Yearly</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-9">
+                                    <div class="tab-content" id="v-pills-tabContent">
+                                        <div class="tab-pane fade show active" id="v-pills-daily-onsite" role="tabpanel"
+                                            aria-labelledby="v-pills-daily-tab" tabindex="0">
+                                            <div class="card-title text-center">
+                                                <h4>Total Onsite Payment per Day</h4>
+                                                <canvas id="dailyOnsiteChart"></canvas>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="v-pills-weekly-onsite" role="tabpanel"
+                                            aria-labelledby="v-pills-weekly-tab" tabindex="0">
+                                            <div class="card-title text-center">
+                                                <h4>Total Onsite Payment per Week</h4>
+                                                <canvas id="weeklyOnsiteChart"></canvas>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="v-pills-monthly-onsite" role="tabpanel"
+                                            aria-labelledby="v-pills-monthly-tab" tabindex="0">
+                                            <div class="card-title text-center">
+                                                <h4>Total Onsite Payment per Month</h4>
+                                                <canvas id="monthlyOnsiteChart"></canvas>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="v-pills-yearly-onsite" role="tabpanel"
+                                            aria-labelledby="v-pills-yearly-tab" tabindex="0">
+                                            <div class="card-title text-center">
+                                                <h4>Total Onsite Payment per Year</h4>
+                                                <canvas id="yearlyOnsiteChart"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="online-tab-pane" role="tabpanel" aria-labelledby="online-tab"
+                            tabindex="0">
+                            <div class="row pt-2 m-3">
+                                <div class="col-3">
+                                    <div class="d-flex align-items-start">
+                                        <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist"
+                                            aria-orientation="vertical">
+                                            <button class="nav-link active" id="v-pills-daily-tab" data-bs-toggle="pill"
+                                                data-bs-target="#v-pills-daily-online" type="button" role="tab"
+                                                aria-controls="v-pills-daily-online" aria-selected="true">Daily</button>
+                                            <button class="nav-link" id="v-pills-weekly-tab" data-bs-toggle="pill"
+                                                data-bs-target="#v-pills-weekly-online" type="button" role="tab"
+                                                aria-controls="v-pills-weekly-online"
+                                                aria-selected="false">Weekly</button>
+                                            <button class="nav-link" id="v-pills-monthly-tab" data-bs-toggle="pill"
+                                                data-bs-target="#v-pills-monthly-online" type="button" role="tab"
+                                                aria-controls="v-pills-monthly-online"
+                                                aria-selected="false">Monthly</button>
+                                            <button class="nav-link" id="v-pills-yearly-tab" data-bs-toggle="pill"
+                                                data-bs-target="#v-pills-yearly-online" type="button" role="tab"
+                                                aria-controls="v-pills-yearly-online"
+                                                aria-selected="false">Yearly</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-9">
+                                    <div class="tab-content" id="v-pills-tabContent">
+                                        <div class="tab-pane fade show active" id="v-pills-daily-online" role="tabpanel"
+                                            aria-labelledby="v-pills-daily-tab" tabindex="0">
+                                            <div class="card-title text-center">
+                                                <h4>Total Onsite Payments per Day</h4>
+                                                <canvas id="dailyOnlineChart"></canvas>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="v-pills-weekly-online" role="tabpanel"
+                                            aria-labelledby="v-pills-weekly-tab" tabindex="0">
+                                            <div class="card-title text-center">
+                                                <h4>Total Onsite Payments per Week</h4>
+                                                <canvas id="weeklyOnlineChart"></canvas>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="v-pills-monthly-online" role="tabpanel"
+                                            aria-labelledby="v-pills-monthly-tab" tabindex="0">
+                                            <div class="card-title text-center">
+                                                <h4>Total Onsite Payments per Month</h4>
+                                                <canvas id="monthlyOnlineChart"></canvas>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="v-pills-yearly-online" role="tabpanel"
+                                            aria-labelledby="v-pills-yearly-tab" tabindex="0">
+                                            <div class="card-title text-center">
+                                                <h4>Total Onsite Payments per Year</h4>
+                                                <canvas id="yearlyOnlineChart"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mt-3">
+                <div class="card-header text-center">
+                    <h4>Onsite Payment vs. Online Payment</h4>
+                </div>
+                <div class="card-body" style="display: block; margin: 0 auto;">
+
+                    <canvas id="onsiteVsOnlineChart"></canvas>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+
+    let doughnutChart = document.getElementById('onsiteVsOnlineChart')
+    let mydoughnutChart = new Chart(doughnutChart, {
+        type: 'doughnut',
+        data: {
+            labels: [
+                'Onsite Payment',
+                'Online Payment',
+            ],
+            datasets: [{
+                data: [70, 100]
+            }],
+            backgroundColor: [
+                'rgb(255,0,0)',
+                'rgb(54, 162, 235)'
+            ],
+            borderColor: [
+                'rgb(255,0,0)',
+                'rgb(54, 162, 235)'
+            ],
+            borderWidth: 1
+        },
+        animation: false,
+    });
+    mydoughnutChart.canvas.parentNode.style.height = "400px"
+    mydoughnutChart.canvas.parentNode.style.width = "400px"
+</script>
+<script>
+    let dailyIncomeChart = document.getElementById('dailyIncomeChart')
+    let incomeChartDaily = new Chart(dailyIncomeChart, {
+        type: 'bar',
+        data: {
+            labels: [
+                "2023-10-18",
+                "2023-10-19",
+                "2023-10-20",
+                "2023-10-21",
+                "2023-10-22",
+                "2023-10-23",
+                "2023-10-24",
+                "2023-10-25",
+                "2023-10-26",
+                "2023-10-27",
+            ],
+            datasets: [{
+                label: "Total Income per Day",
+                data: [5000, 10000, 6450, 7230, 4605, 8500, 9840, 6785, 5740, 8540],
+                backgroundColor: [
+                    'rgb(25, 135, 84)'
+                ],
+                borderColor: [
+                    'rgb(0,0,0)'
+                ],
+                borderWidth: 2
+            }],
+        },
+        options: {
+            animation: false,
+        }
+    })
+    let weeklyIncomeChart = document.getElementById('weeklyIncomeChart')
+    let incomeChartWeekly = new Chart(weeklyIncomeChart, {
+        type: 'bar',
+        data: {
+            labels: [
+                "Week 1",
+                "Week 2",
+                "Week 3",
+                "Week 4",
+                "Week 5",
+                "Week 6",
+                "Week 7",
+                "Week 8",
+                "Week 9",
+                "Week 10",
+            ],
+            datasets: [{
+                label: "Total Income per Week",
+                data: [12300, 10240, 20310, 14020, 16200, 20400, 16305, 14320, 13240, 18450],
+                backgroundColor: [
+                    'rgb(25, 135, 84)'
+                ],
+                borderColor: [
+                    'rgb(0,0,0)'
+                ],
+                borderWidth: 2
+            }],
+
+        },
+        options: {
+            animation: false,
+        }
+    })
+    let monthlyIncomeChart = document.getElementById('monthlyIncomeChart')
+    let incomeChartMonthly = new Chart(monthlyIncomeChart, {
+        type: 'bar',
+        data: {
+            labels: [
+                "January",
+                "Febuary",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December",
+            ],
+            datasets: [{
+                label: "Total Income per Month",
+                data: [102300, 120390, 132550, 123980, 179505, 123950, 123840, 182750, 203590, 213400, 172380, 281730],
+                backgroundColor: [
+                    'rgb(25, 135, 84)'
+                ],
+                borderColor: [
+                    'rgb(0,0,0)'
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            animation: false,
+        }
+    })
+    let yearlyIncomeChart = document.getElementById('yearlyIncomeChart')
+    let incomeChartYearly = new Chart(yearlyIncomeChart, {
+        type: 'bar',
+        data: {
+            labels: [
+                "Year 1",
+                "Year 2",
+                "Year 3",
+            ],
+            datasets: [{
+                label: "Total Income per Year",
+                data: [450230, 402340, 42350],
+                backgroundColor: [
+                    'rgb(25, 135, 84)'
+                ],
+                borderColor: [
+                    'rgb(0,0,0)'
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            animation: false,
+        }
+    })
+</script>
+<script>
+    let dailyOnsiteChart = document.getElementById('dailyOnsiteChart')
+    let onsiteChartDaily = new Chart(dailyOnsiteChart, {
+        type: 'bar',
+        data: {
+            labels: [
+                "2023-10-18",
+                "2023-10-19",
+                "2023-10-20",
+                "2023-10-21",
+                "2023-10-22",
+                "2023-10-23",
+                "2023-10-24",
+                "2023-10-25",
+                "2023-10-26",
+                "2023-10-27",
+            ],
+            datasets: [{
+                label: "Total Online Payment per Day",
+                data: [100, 123, 114, 140, 150, 132, 112, 85, 75, 130],
+                backgroundColor: [
+                    'rgb(220,53,69)'
+                ],
+                borderColor: [
+                    'rgb(0,0,0)'
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            animation: false,
+        }
+    })
+    let weeklyOnsiteChart = document.getElementById('weeklyOnsiteChart')
+    let onsiteChartWeekly = new Chart(weeklyOnsiteChart, {
+        type: 'bar',
+        data: {
+            labels: [
+                "Week 1",
+                "Week 2",
+                "Week 3",
+                "Week 4",
+                "Week 5",
+                "Week 6",
+                "Week 7",
+                "Week 8",
+                "Week 9",
+                "Week 10",
+            ],
+            datasets: [{
+                label: "Total Online Payment per Week",
+                data: [700, 861, 798, 980, 1050, 924, 784, 595, 750, 1280],
+                backgroundColor: [
+                    'rgb(220,53,69)'
+                ],
+                borderColor: [
+                    'rgb(0,0,0)'
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            animation: false,
+        }
+    })
+    let monthlyOnsiteChart = document.getElementById('monthlyOnsiteChart')
+    let onsiteChartMonthly = new Chart(monthlyOnsiteChart, {
+        type: 'bar',
+        data: {
+            labels: [
+                "January",
+                "Febuary",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December",
+            ],
+            datasets: [{
+                label: "Total Onsite Payment per Month",
+                data: [1700, 2861, 3798, 4980, 2050, 3924, 5784, 1595, 2750, 1280, 3234, 5839],
+                backgroundColor: [
+                    'rgb(220,53,69)'
+                ],
+                borderColor: [
+                    'rgb(0,0,0)'
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            animation: false,
+        }
+    })
+    let yearlyOnsiteChart = document.getElementById('yearlyOnsiteChart')
+    let onsiteChartYearly = new Chart(yearlyOnsiteChart, {
+        type: 'bar',
+        data: {
+            labels: [
+                "Year 1",
+                "Year 2",
+                "Year 3",
+            ],
+            datasets: [{
+                label: "Total Onsite Payment per Year",
+                data: [11700, 15923, 18237],
+                backgroundColor: [
+                    'rgb(220,53,69)'
+                ],
+                borderColor: [
+                    'rgb(0,0,0)'
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            animation: false,
+        }
+    })
+</script>
+<script>
+    let dailyOnlineChart = document.getElementById('dailyOnlineChart')
+    let onlineChartDaily = new Chart(dailyOnlineChart, {
+        type: 'bar',
+        data: {
+            labels: [
+                "2023-10-18",
+                "2023-10-19",
+                "2023-10-20",
+                "2023-10-21",
+                "2023-10-22",
+                "2023-10-23",
+                "2023-10-24",
+                "2023-10-25",
+                "2023-10-26",
+                "2023-10-27",
+            ],
+            datasets: [{
+                label: "Total Online Payment per Day",
+                data: [100, 123, 114, 140, 150, 132, 112, 85, 75, 130],
+                backgroundColor: [
+                    'rgb(13, 110, 253)'
+                ],
+                borderColor: [
+                    'rgb(0,0,0)'
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            animation: false,
+        }
+    })
+    let weeklyOnlineChart = document.getElementById('weeklyOnlineChart')
+    let onlineChartWeekly = new Chart(weeklyOnlineChart, {
+        type: 'bar',
+        data: {
+            labels: [
+                "Week 1",
+                "Week 2",
+                "Week 3",
+                "Week 4",
+                "Week 5",
+                "Week 6",
+                "Week 7",
+                "Week 8",
+                "Week 9",
+                "Week 10",
+            ],
+            datasets: [{
+                label: "Total Online Payment per Week",
+                data: [700, 861, 798, 980, 1050, 924, 784, 595, 750, 1280],
+                backgroundColor: [
+                    'rgb(13, 110, 253)'
+                ],
+                borderColor: [
+                    'rgb(0,0,0)'
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            animation: false,
+        }
+    })
+    let monthlyOnlineChart = document.getElementById('monthlyOnlineChart')
+    let onlineChartMonthly = new Chart(monthlyOnlineChart, {
+        type: 'bar',
+        data: {
+            labels: [
+                "January",
+                "Febuary",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December",
+            ],
+            datasets: [{
+                label: "Total Online Payment per Month",
+                data: [1700, 2861, 3798, 4980, 2050, 3924, 5784, 1595, 2750, 1280, 3234, 5839],
+                backgroundColor: [
+                    'rgb(13, 110, 253)'
+                ],
+                borderColor: [
+                    'rgb(0,0,0)'
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            animation: false,
+        }
+    })
+    let yearlyOnlineChart = document.getElementById('yearlyOnlineChart')
+    let onlineChartYearly = new Chart(yearlyOnlineChart, {
+        type: 'bar',
+        data: {
+            labels: [
+                "Year 1",
+                "Year 2",
+                "Year 3",
+            ],
+            datasets: [{
+                label: "Total Online Payment per Year",
+                data: [11700, 15923, 18237],
+                backgroundColor: [
+                    'rgb(13, 110, 253)'
+                ],
+                borderColor: [
+                    'rgb(0,0,0)'
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            animation: false,
+        }
+    })
+</script>
+
+</html>
