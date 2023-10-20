@@ -498,6 +498,7 @@
                 As of October 17, 2023
             </div>
         </div>
+
         <div class="collapse mt-3" id="collapseExample">
             <div class="card">
                 <div class="card-header text-center">
@@ -706,19 +707,28 @@
                     </div>
                 </div>
             </div>
-            <div class="card mt-3">
-                <div class="card-header text-center">
-                    <h4>Onsite Payment vs. Online Payment</h4>
+        </div>
+        <div class="card mt-3">
+            <div class="card-header text-center">
+                <h4>Onsite Payment vs. Online Payment</h4>
+            </div>
+            <div class="card-body" >
+                <div class="row">
+                    <div class="col-6" style="display: block; margin: 0 auto;">
+                        <h5 class="text-center">Online Payment vs. Onsite Payment</h5>
+                        <canvas id="onsiteVsOnlineChart"></canvas>
+                    </div>
+                    <div class="col-6" style="display: block; margin: 0 auto;">
+                        <h6 class="text-center"># of Payment per Mode of Online Payment</h6>
+                        <canvas id="onlinePieChart"></canvas>
+                    </div>
                 </div>
-                <div class="card-body" style="display: block; margin: 0 auto;">
 
-                    <canvas id="onsiteVsOnlineChart"></canvas>
 
-                </div>
 
             </div>
-        </div>
 
+        </div>
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -734,21 +744,42 @@
             ],
             datasets: [{
                 data: [70, 100]
-            }],
+            },
+            ],
             backgroundColor: [
                 'rgb(255,0,0)',
                 'rgb(54, 162, 235)'
             ],
-            borderColor: [
-                'rgb(255,0,0)',
-                'rgb(54, 162, 235)'
-            ],
-            borderWidth: 1
+            borderWidth: 5,
+            borderRadius: 10,
+            hoverOffset: 4
         },
         animation: false,
     });
     mydoughnutChart.canvas.parentNode.style.height = "400px"
     mydoughnutChart.canvas.parentNode.style.width = "400px"
+
+    let pieChart = document.getElementById('onlinePieChart')
+    let myPieChart = new Chart(pieChart, {
+        type: 'pie',
+        data: {
+            labels: [
+                'GCash', 'Maya', 'GrabPay'
+            ],
+            datasets: [{
+                data: [60, 30, 10]
+            }],
+            backgroundColor: [
+                'rgb(255,0,0)',
+                'rgb(54, 162, 235)',
+                'rgb(0,255,0)'
+            ]
+
+        }
+    });
+    myPieChart.canvas.parentNode.style.height = "400px"
+    myPieChart.canvas.parentNode.style.width = "400px"
+
 </script>
 <script>
     let dailyIncomeChart = document.getElementById('dailyIncomeChart')
