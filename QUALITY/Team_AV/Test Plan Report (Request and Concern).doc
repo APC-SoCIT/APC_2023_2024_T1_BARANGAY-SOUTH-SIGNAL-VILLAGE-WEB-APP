@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>testplan Resident Request and Concern</title>
+<link type="text/css" rel="stylesheet" href="https://testlink.apc.edu.ph/gui/themes/default/css/tl_documents.css" />
+<style type="text/css" media="print">.notprintable { display:none;}</style>
+</head>
+<body>
+<div>
+<div style="float:right;">TestLink Community [configure $tlCfg-&gt;document_generator-&gt;company_name]</div>
+<div>&nbsp;</div><hr />
+<p style="text-align: center;"><img alt="TestLink logo" title="configure using $tlCfg->document_generator->company_logo"  width=231 height=56 src="https://testlink.apc.edu.ph/gui/themes/default/images/tl-logo-transparent-25.png" /></p></div>
+<div class="doc_title"><p>Test Plan Design Report</p></div>
+<div class="doc_title" style="text-align:left;margin: auto;"><p>Test Project: APC_2023_2024_T1_BARANGAY-SOUTH-SIGNAL-VILLAGE-WEB-APP<br/>Test Plan: BSSV - RESIDENT PERSPECTIVE - TEST PLAN 02<br/>Test Suite: Resident Request and Concern</p></div>
+<div class="summary"><p id="printedby">Printed by TestLink on 17/11/2023</p></div>
+<div class="pagefooter" id="copyright">2012 &copy; TestLink Community</div>
+<h1 class="doclevel" >Test Project: APC_2023_2024_T1_BARANGAY-SOUTH-SIGNAL-VILLAGE-WEB-APP</h1>
+<div class="txtlevel"><p>QUALITY for Team Developmentality</p></div>
+ <br/><h1 class="doclevel" style="page-break-before: avoid;"  >Test Plan: BSSV - RESIDENT PERSPECTIVE - TEST PLAN 02</h1>
+<div class="txtlevel"><p>This Test Plan is an automation testing (Selenium IDE)&nbsp;of the three functionalities of the application: User Authentication, Create and Track Request, and Create and Track Concern together with the latest feature, Payment.</p></div>
+ <br/><h1 class='doclevel'>Test Suite : Resident Request and Concern</h1>
+<h1 class='doclevel'>Test Suite : Resident Request</h1>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case BSSV-220: Resident input valid and complete request form and upload valid necessary requirement.&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>Resident input valid and complete request form and upload valid necessary requirement.</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr></table>
+</div>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case BSSV-221: Resident input invalid and incomplete request form and upload valid necessary requirement.&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>Resident input invalid and incomplete request form and upload valid necessary requirement.</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr></table>
+</div>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case BSSV-222: Resident input valid and complete request form and do not upload necessary requirement.&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>Resident input valid and complete request form and do not upload necessary requirement.</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr></table>
+</div>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case BSSV-223: Resident input valid and complete request form and upload necessary requirement. Checked I have read&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>Resident input valid and complete request form and upload necessary requirement. Checked I have read, understood, and accepted the Privacy Policy and Terms &amp; Conditions.</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr></table>
+</div>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case BSSV-224: Resident input valid and complete request form and do not upload necessary requirement. Unchecked I&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>Resident input valid and complete request form and do not upload necessary requirement. Unchecked I have read, understood, and accepted the Privacy Policy and Terms &amp; Conditions.</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr></table>
+</div>
+<h1 class='doclevel'>Test Suite : Resident Concern</h1>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case BSSV-229: Resident created a concern with incomplete information and agreed on the Privacy Policy and TOC.&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>Resident created a concern with incomplete information and agreed on the Privacy Policy and TOC.</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr></table>
+</div>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case BSSV-230: Resident created a concern, providing complete information and disagreed on the Privacy Policy.&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>Resident created a concern, providing complete information and disagreed on the Privacy Policy.</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr></table>
+</div>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case BSSV-231: Resident created a concern, providing complete information and agreed on the Privacy Policy and TOC.&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>Resident created a concern, providing complete information and agreed on the Privacy Policy and TOC.</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr></table>
+</div>
+<h1 class='doclevel'>Test Suite : Resident Track Request Status</h1>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case BSSV-225: Resident checks his/her pending submitted request&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>Resident checks his/her pending submitted request</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr></table>
+</div>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case BSSV-226: Resident checks his/her paid submitted request&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>Resident checks his/her paid submitted request</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr></table>
+</div>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case BSSV-227: Resident checks his/her processing submitted request&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>Resident checks his/her processing submitted request</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr></table>
+</div>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case BSSV-228: Resident checks his/her denied submitted request&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>Resident checks his/her denied submitted request</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr></table>
+</div>
+<h1 class='doclevel'>Test Suite : Resident Track Concern Status</h1>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case BSSV-232: Resident views the status of the concern.&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>Resident views the status of the concern.</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr></table>
+</div>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case BSSV-233: Resident views the concern.&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>Resident views the concern.</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr></table>
+</div>
+<p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case BSSV-234: Resident filters the table, either descending or ascending.&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>Resident filters the table, either descending or ascending.</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Priority:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr></table>
+</div>
+
+</body>
+</html>
