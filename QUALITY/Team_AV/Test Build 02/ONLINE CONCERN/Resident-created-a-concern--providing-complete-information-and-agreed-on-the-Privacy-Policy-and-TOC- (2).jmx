@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="2.4" jmeter="5.4.2">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Resident created a concern, providing complete information and agreed on the Privacy Policy and TOC." enabled="true">
+      <stringProp name="TestPlan.comments">This test plan was created by the BlazeMeter converter v.3.1.23. Please contact support@blazemeter.com for further support.</stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager">
+        <collectionProp name="HeaderManager.headers">
+          <elementProp name="sec-ch-ua" elementType="Header">
+            <stringProp name="Header.name">sec-ch-ua</stringProp>
+            <stringProp name="Header.value">&quot;Google Chrome&quot;;v=&quot;119&quot;, &quot;Chromium&quot;;v=&quot;119&quot;, &quot;Not?A_Brand&quot;;v=&quot;24&quot;</stringProp>
+          </elementProp>
+          <elementProp name="sec-ch-ua-mobile" elementType="Header">
+            <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+            <stringProp name="Header.value">?0</stringProp>
+          </elementProp>
+          <elementProp name="sec-ch-ua-platform" elementType="Header">
+            <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+            <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+          </elementProp>
+          <elementProp name="User-Agent" elementType="Header">
+            <stringProp name="Header.name">User-Agent</stringProp>
+            <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36</stringProp>
+          </elementProp>
+        </collectionProp>
+      </HeaderManager>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="BASE_URL_1" elementType="Argument">
+            <stringProp name="Argument.name">BASE_URL_1</stringProp>
+            <stringProp name="Argument.value">socitcloud.apc.edu.ph</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+          <collectionProp name="Arguments.arguments"/>
+        </elementProp>
+        <boolProp name="HTTPSampler.concurrentDwn">true</boolProp>
+        <boolProp name="HTTPSampler.image_parser">true</boolProp>
+        <intProp name="HTTPSampler.concurrentPool">6</intProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <DNSCacheManager guiclass="DNSCachePanel" testclass="DNSCacheManager" testname="DNS Cache Manager" enabled="true">
+        <collectionProp name="DNSCacheManager.servers"/>
+        <boolProp name="DNSCacheManager.clearEachIteration">true</boolProp>
+      </DNSCacheManager>
+      <hashTree/>
+      <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager">
+        <collectionProp name="AuthManager.auth_list"/>
+      </AuthManager>
+      <hashTree/>
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+        <collectionProp name="CookieManager.cookies"/>
+        <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+      </CookieManager>
+      <hashTree/>
+      <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager">
+        <boolProp name="clearEachIteration">true</boolProp>
+        <boolProp name="useExpires">false</boolProp>
+      </CacheManager>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <longProp name="ThreadGroup.duration">0</longProp>
+        <longProp name="ThreadGroup.delay">0</longProp>
+      </ThreadGroup>
+      <hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testname="Go to Online Services" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://socitcloud.apc.edu.ph/barangay/login" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">barangay/login</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                  <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+              <doubleProp>
+                <name>RandomTimer.range</name>
+                <value>0.0</value>
+                <savedValue>0.0</savedValue>
+              </doubleProp>
+              <stringProp name="ConstantTimer.delay">0</stringProp>
+              <stringProp name="TestPlan.comments">Recorded time was 0 milliseconds</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testname="Click Login" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://socitcloud.apc.edu.ph/barangay/loginUser" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="g-recaptcha-response" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">g-recaptcha-response</stringProp>
+                  <stringProp name="Argument.value">03AFcWeA4tWAThDDclCF696tnkdBLH7cBYIia6MTYgHwyqwutNuA3vxkmImDmrK2e8IDKteNYkjxomlJDbXp-XffGQ2Syx3D5zT6FVWlfX-EfMIxiG93szLczzq6yFpLnTluvXo5Ya6O9ZU4hwj_4wBuDIlCZqKHITqN3aqTtGIW5H0K2mwAIPjFdqVhUP_T1l-3GKm2WUfG6GH5YhX70Yw1FtIZYk29_mXo8Vje1a8XnENze2KoqvNYaHO_OYtsoN1nEGyyjh03jH6-IL4gdo0e2rgGLp7xfhzbN8Ff5sopa0EffUhqHTZUUud0pL4X3XHdn824d1Pim6LHB-q5WhH2FUcQ1mwNfwjV50DHrCimaKo53R2wQOgyCTzdkL34AYMbSwg0elTaEFvYpTrtzOD7AtS5b9_Rf8mCKYj-foXtNzEZ5x4sfCPeVSimvT7KbYPQJGEs49Jd2SidYcXW032lnRde52cbkwy9tvUfKR_ySswvq7DE6yxFt2CcQFzA-Gma3e65WXw5KKrb2gjdn4ufQ4PeDMKbyOI7vovD2RAac7cdQaThdswTylJcQm7r-VpU4fqBNPe6m9Nds0PY0ziMBmTxtt-sUAZQ_reg2c30QI_VBVDj-GukwxazFYEQIYaBhya-nt8goUehG8zPQJSbhKxlpRerdummUUQtxrxsM7h02eQMtS0jXVk4nIkXgkl3mwNr-JH8qgZVlaPpnWUVslcexGPHCqSRPPt02gLj4wlRMx2GHaArSzdvfX0z1yhu64OlfyAtV2Dxh2L5D79DQPGWo4jMJutwJaUAonNpqLAGjUVi6Tnnz2nyopoq1ik-7FOykodgVeF_LkWXevUUT6Q4rGLVtML5yjAXBaH9Zz-AyU-K8pxyCYJrc9OFljoU2nKxJsDPMgasWNwq78_b2w1GUbkC5QgojMgS93jz_pz5nVONHl9juQdZzo2RL4zIBSDAF53KD2OCxi6UL4GI-C2YBmOcxxSFk5EF_kUriC6gvHS1pdA6SuxTNhGt12IUt_LWj7da6uKBq2B7J0jPRe69_jEANoavrSLE4gIMW6Aa5Ef1IUl604CZE0OMEReyKETUBHdM22XX86vRqErEtkpe23OTgVsbihcODai0O_w4_XOoU-8QMi12STb3vwerR4XkGMunK7s2bzepTasTC4xSUSbHzFK4mICAv8RKecw_oDbENy_HdhQh4RmWmiF7h39MYp0EEvNHaOxJmgnVkN63Pc78x1ESEBIs4JcSwmMZTt7Rg3nWchu_BVuNQEJyHkoXX_WNf7gNONK7C7B3TEE29l4Rm1U3M61CyTfvhQBuip4mc1GBYcIfbqVcyIv8AtFldpmSO3ZgZ4qCmK0wE4iWLHWMG7ziphDfTl9rVq832lnVUMm54-8FaDJUkYMuhO-7SFv669rLhXWl3v2eA5BFE1IeUAj1JPfvxgNPJy3fo0PZ0c8ab5_gdMk9Fuv118TMjoYUiFOktLccGTddAMoQUcLfUBZBT-bjBfF-6dHv5XEVTp0DndSlRt2HemxFwd77BTloJAjCXljlOW3PFRsUjhBqXf-ZwGOtemy_pSZDKx4XtGyvguV8xGzuTm0l9TJ-x7fdUafiJK0wCacuiNMaaZfOZ5VMbU13zDAw8jmsAYTgadCtfGq1nC0owDQBfgA4NoZCCdtE6yPH0TZ8MOFlSlbweOER3AsdhLtBUOKKUc4ElXTiNjz9l5S8ZG1AGAb-zVAqC4arLfBa5YEBTJkPG_TVIFlvbTbBS17YWDu-Vn5DbXAgyAZsbt6jhj-ptQbUG3klmS</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="password" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">password</stringProp>
+                  <stringProp name="Argument.value">User_123</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="_token" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">_token</stringProp>
+                  <stringProp name="Argument.value">JXCO1nHiKiXLDM9TziWPKC6d67RXC4Rtfgv6O1hT</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="email" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">email</stringProp>
+                  <stringProp name="Argument.value">Jakersonbbermudo@gmail.com</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">barangay/loginUser</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                  <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">multipart/form-data; boundary=----WebKitFormBoundaryxJyuEaBsJ9g1KKTI</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+              <doubleProp>
+                <name>RandomTimer.range</name>
+                <value>30888.0</value>
+                <savedValue>0.0</savedValue>
+              </doubleProp>
+              <stringProp name="ConstantTimer.delay">15444</stringProp>
+              <stringProp name="TestPlan.comments">Recorded time was 30888 milliseconds</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testname="Find Submit Concern and click to apply" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://socitcloud.apc.edu.ph/barangay/create-concern" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">barangay/create-concern</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                  <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+              <doubleProp>
+                <name>RandomTimer.range</name>
+                <value>12507.0</value>
+                <savedValue>0.0</savedValue>
+              </doubleProp>
+              <stringProp name="ConstantTimer.delay">6253.5</stringProp>
+              <stringProp name="TestPlan.comments">Recorded time was 12507 milliseconds</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testname="Click Request" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://socitcloud.apc.edu.ph/barangay/submit-concern" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="g-recaptcha-response" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">g-recaptcha-response</stringProp>
+                  <stringProp name="Argument.value">03AFcWeA7rnUlNgN4Lgh6N7lLcg2GexRs3LntI_7gHrMrxO6sUgdg9KYQA74K8CML-p4abyFFvH8LAkF8Y9OH-oh_CSD9_2UpSGe7joe6V7i_OgG7qjVSkERSprjSsJ9ZQflDJp1O8EnqmE3MTFrnCHDax88BfRFMofQAm3nARL5S3H8GuXk8mhIHTJU2JaYHMhgQgpD0xMD-mJ6WTEldhV94P5diph7u39TvsTJbw9kBRMoJ65CURtFWv_hTl-eXkGNZnVXQlMdpH8Oyo18Il34j4I1PG53rvKLTWvldwrcVKCmp3xT7eB-wIftQcHlf-tAfHIyAGobnnWCbf8QEiE4-8Rmn_rvYHRftJl6So-_khPAPtoSRtAVaiLH6oOYJVcve2Y5zaXyoSW09R1A6ACylwVHOQVKdwMF5flnp5CUQOMweb7keVn6gPRNs09Sh8OHnQ8cI5eQxweg_e7lRdqkW1eeScU36jL4n91hvXM0jIjJPPRu3RpQtpU4GxG43Dseu3APdCTIJBxdfqrfIHyIE_eqQVlQ3OhEe9VCTllYIicRzTDf9S5zAsW2D5T7s5Jm55uo6oNqicq99y6_Gbh93-d6DaljGjcfUJjjYfkIG_AsKIi0d5o4qeGeCBXZz31OO7yoJ1_JbJqHRdT3yFVwUxg0yL4RnTWd_ciQbf5zYwD5YraE8U_9PytPB_zLCSw_c1lNHJP0ms821Fn5zDLzT7CtpKaFJdgUvrAeGG_dZ4gOPaty99hPFbDHv6oSuCIA5h5JmzcaCIhUHcQo9sVxZWVkJnPHC30psbeYCeFEdaKgv2GoGf2eIJGi8M9Y7noajvvOhNUIudzCDbWyojmM3IYpnFfsIbqI5ineEorewbVVL5bFSv305c8FJaPqyU-6zHFDnCeohRDN3PxZfgDBGrnGgYIooYYoeciFH0ZdtTBYP4bsoxNDH6r1dYxLg8cM5aPWLxBCwFOpFwCg-zP6E-k1TTaLEocitxF1kWlUAWO5yYWv4pVpLt_Hm4Gh0EvbhjPBSVf_D1NfpnK-tVdm6Td1bCF1p-azAv8ZtIFFmrDlS-5tQGG60nNuwLjkOm5B3D3MkperEa7jt97xMTIz0WiAVT70A3CNuu9M-MYVDaNyUFWqskyl4snUeebxXlQg5LulDCE_Lp1fvroT5iDyLXaXwpQpQmfJZVkl-JMoiHiAI5N9BhyjPkL92qj0HHjTkmg4c0dhuR_pmQoSJRWpvu_kqt9rdnwEcOGANawcRVjSrTJKtmiOayoYZ235nNxjktFQ-D1chZUqDe1m8ALWvJ9V3zHePK55fzXmsLzvu41AFPO3ueH6xvHO1FZBs9gQcXzvg2sWeD4QVs3nM6IsS5USxOhJFMFnkfITqvErfkxplT1vr_gCFo8V-bW-Wd9zItyCnn5GyVPqYOoRT1Ps9aPYqwP10CIYwgicWvYSh52tZoMo73vvU8sRhPFNuFlQExs2J6VAP0opf1dVJRDYHIX9nShx__P8tp68fQfIJdNpJ8EV1_h7zFTH0j4WFfAR0j4T8OARWYoBjK1mP8BxBPQF-_Zyv2_AQAedAKGPg9a9w-6f-h9_RA7wKkRwSQDWZQJE8jChXQ-1uWrBDJ-2y6k2OG1WPkoGfYkjer09QWu0_P3dsFdaB9KKTrcJdnQUpsu7N7s5N5Ws86M5Ce2SpNczY45k_AV96TcLzxaKAM-GAkgjcnBlxDaqABrmuXby5UDyCbhleatDWs0rDXP2jJ245k3ZLmrq_RCdBM4oqd0V2MtIz5zStL-C84uoWfpxCm5Lq2iSBA</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="concern_description" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">concern_description</stringProp>
+                  <stringProp name="Argument.value">After logging in, my sister&apos;s screen when blank.</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="file" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">file</stringProp>
+                  <stringProp name="Argument.value">about_blank-2.jpg</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="concern_title" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">concern_title</stringProp>
+                  <stringProp name="Argument.value">No Account Existing</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="_token" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">_token</stringProp>
+                  <stringProp name="Argument.value">JXCO1nHiKiXLDM9TziWPKC6d67RXC4Rtfgv6O1hT</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="concern_type" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">concern_type</stringProp>
+                  <stringProp name="Argument.value">Resident Account</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="resident_id" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">resident_id</stringProp>
+                  <stringProp name="Argument.value">61</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">barangay/submit-concern</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">multipart/form-data; boundary=----WebKitFormBoundaryshh4jwEa0uRaobJ5</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
